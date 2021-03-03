@@ -97,7 +97,6 @@ export default function Forms() {
                 inputRef={register({ required: true, min:18 })}
               />
               {errors.idade && (alert('É necessário ser maior de idade!'))}
-
             </Grid>
             <Grid item xs={12}>
               <TextField
