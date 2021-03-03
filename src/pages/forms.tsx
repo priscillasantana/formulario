@@ -83,7 +83,7 @@ export default function Forms() {
                 autoFocus
                 inputRef={register({ required: true})}
               />
-              {errors.nome && (alert('Nome obrigatório'))}
+              {errors.nome && (alert('É necessário preencher o nome!'))}
             </Grid>
             <Grid item xs={12} sm={6}>
             <TextField
@@ -96,7 +96,7 @@ export default function Forms() {
                 id="idade"
                 inputRef={register({ required: true, min:18 })}
               />
-              {errors.idade && (alert('É necessário ser maior de idade'))}
+              {errors.idade && (alert('É necessário ser maior de idade!'))}
 
             </Grid>
             <Grid item xs={12}>
@@ -105,12 +105,13 @@ export default function Forms() {
                 required
                 fullWidth
                 id="email"
-                label="Email"
+                label="E-mail"
                 name="email"
                 type='email'
                 autoComplete="email"
                 inputRef={register({ required: true })}
               />
+              {errors.nome && (alert('É necessário preencher o e-mail!'))}
             </Grid>
             <Grid item xs={12}>
             <TextField
@@ -122,6 +123,7 @@ export default function Forms() {
                 name="cidade"
                 inputRef={register({ required: true })}
               />
+              {errors.nome && (alert('É necessário preencher a cidade!'))}
             </Grid>
             <Grid item xs={12}>
             <FormControl component="fieldset">
