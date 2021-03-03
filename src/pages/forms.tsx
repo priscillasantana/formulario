@@ -108,9 +108,12 @@ export default function Forms() {
                 name="email"
                 type='email'
                 autoComplete="email"
-                inputRef={register({ required: true })}
+                inputRef={register({ required: true, pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                  message: "Enter a valid e-mail address",
+                } })}
               />
-              {errors.nome && (alert('É necessário preencher o e-mail!'))}
+              {errors.email && (alert('É necessário preencher o e-mail no formato correto!'))}
             </Grid>
             <Grid item xs={12}>
             <TextField
@@ -122,7 +125,7 @@ export default function Forms() {
                 name="cidade"
                 inputRef={register({ required: true })}
               />
-              {errors.nome && (alert('É necessário preencher a cidade!'))}
+              {errors.cidade && (alert('É necessário preencher a cidade!'))}
             </Grid>
             <Grid item xs={12}>
             <FormControl component="fieldset">
