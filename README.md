@@ -6,10 +6,10 @@
 - Nome (obrigatório),  
 
 
-- cidade, 
+- Cidade, 
 
 
-- email (obrigatório e com validação de tipo)
+- Email (obrigatório e com validação de tipo)
 
 
 - Idade (obrigatório e validação para ser maior de 18 – o número digitado tem que ser maior que 18)
