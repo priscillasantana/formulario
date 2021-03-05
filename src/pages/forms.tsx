@@ -67,9 +67,9 @@ export default function Forms() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Cadastro pra trabalhar na Bees!
+          Cadastro para trabalhar na Bees!
         </Typography>
-        <form className={classes.form} noValidate onSubmit={handleSubmit(onSubmit)}>
+        <form className={classes.form} data-testid="form" noValidate onSubmit={handleSubmit(onSubmit)}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -95,6 +95,7 @@ export default function Forms() {
                 type="number"
                 id="idade"
                 inputRef={register({ required: true, min:18 })}
+                data-testid='idade'
               />
               {errors.idade && (alert('É necessário ser maior de idade!'))}
             </Grid>
@@ -107,6 +108,7 @@ export default function Forms() {
                 label="E-mail"
                 name="email"
                 type='email'
+                data-testid='email'
                 autoComplete="email"
                 inputRef={register({ required: true, pattern: {
                   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
@@ -123,18 +125,19 @@ export default function Forms() {
                 id="cidade"
                 label="Cidade"
                 name="cidade"
+                data-testid='cidade'
                 inputRef={register({ required: true })}
               />
               {errors.cidade && (alert('É necessário preencher a cidade!'))}
             </Grid>
             <Grid item xs={12}>
-            <FormControl component="fieldset">
+            <FormControl component="fieldset" title='checkbox'>
                     <FormLabel component="legend">Estado Civil</FormLabel>
                     <RadioGroup aria-label="estadoCivil" name="estadoCivil">
                         
-                        <FormControlLabel value="Casado" name="Casado" control={<Radio />} label="Casado" inputRef={register}  />
+                        <FormControlLabel value="Casado" name="Casado" data-testid='casado' control={<Radio />} label="Casado" inputRef={register}  />
                             {Casado && (
-                                <TextField id="outlined-basic" label="Nome do Conjuge" variant="outlined" name='mozao' inputRef={register({ required: true })}/>
+                                <TextField id="outlined-basic" label="Nome do Conjuge" variant="outlined" name='mozao' data-testid='mozao' inputRef={register({ required: true })}/>
                             )}
                         <FormControlLabel value="Solteiro" name="Solteiro" control={<Radio />} label="Solteiro" inputRef={register} />
                         <FormControlLabel value="Divorciado" name="Divorciado" control={<Radio />} label="Divorciado" inputRef={register} />
@@ -154,7 +157,7 @@ export default function Forms() {
             Enviar
           </Button>
         </form>
-      </div>
+      </div> 
       <Box mt={5}>
         <Copyright />
       </Box>
